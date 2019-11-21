@@ -5,15 +5,25 @@ import { Schema, model, Document } from 'mongoose'
 const schema = new Schema({
     title: String,
     description: String,
+    adicional: String,
+    categoria: String,
+    fechaInicio: String,
+    fechaFinal:String,
     imagePath: String
+   
 });
 
 //esquema que tendra la tabla imagen y sus respectivos datos en typescript
-export interface IPhoto extends Document {
-    title: string;
-    description: string;
-    imagePath: string;
+export interface IEvento extends Document {
+    title: string,
+    description: string,
+    adicional: string,
+    categoria: string,
+    fechaInicio: string,
+    fechaFinal:string,
+    imagePath: string
 }
 
 //modelo de datos que tendra dentro de la propia base de datos
-export default model<IPhoto>('Photo', schema);
+//nombre de la tabla
+export default model<IEvento>('evento', schema);

@@ -1,27 +1,27 @@
-import { Router } from 'express'
+import { Router } from 'express';
 const router = Router();
 
-import upload from '../libs/multer'
-import { getPhotos, createPhoto, deletePhoto, getPhoto, updatePhoto } from '../controllers/photo.controller'
+import uploadEvento from '../libs/multer-evento'
+import { getEventos, createEvento, deleteEvento, getEvento, updateEvento } from '../controllers/evento.controller'
 
 // middleware
 // router.use(upload.single('image'));
 
 // routes
 //para realizar la pruebas en las photos
-router.route('/photos')
+router.route('/eventos')
     //importacion de la photo 
     //obtiene todas las photos
-    .get(getPhotos)
+    .get(getEventos)
     //registra una photo y su descripción
-    .post(upload.single('image'), createPhoto);
+    .post(uploadEvento.single('image'), createEvento);
 
 
     //ruta para obtener una photo especipifa
-router.route('/photos/:id')
+router.route('/eventos/:id')
     //obtener la descripcion de una sola photo
-    .get(getPhoto)
-    .delete(deletePhoto)
-    .put(updatePhoto);
+    .get(getEvento)
+    .delete(deleteEvento)
+    .put(updateEvento);
 
 export default router;

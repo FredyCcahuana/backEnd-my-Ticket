@@ -5,10 +5,10 @@ import path from 'path'
 import uuid from 'uuid/v4';
 
 // Settings
-//cambiar de nombre al nombre de la carpeta
+//cambiar de nombre al nombre de la imagen
 const storage = multer.diskStorage({
     //idicar en que carpeta se guardara los archivos
-    destination: 'uploads',
+    destination: 'uploads/ticket',
     filename: (req, file, cb) => {
         //renobrar el nombre de las imagenes
         //uuid: genera un id
@@ -16,4 +16,5 @@ const storage = multer.diskStorage({
         cb(null, uuid() + path.extname(file.originalname))
     }
 });
+
 export default multer({storage});

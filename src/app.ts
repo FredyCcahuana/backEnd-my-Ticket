@@ -9,7 +9,7 @@ import indexRoutes from './routes/index'
 const app: Application = express();
 
 // Settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 5000);
 
 // Middlewares
 app.use(morgan('dev'));
@@ -24,6 +24,7 @@ app.use('/api', indexRoutes);
 //esta carpeta para realizar el guardado de las imagenes
 //cuando entre a la direccion de /uploads se accede a las imagens
 //path.resolve parte de la direccion anterior
-app.use('/uploads', express.static(path.resolve('uploads')));
+app.use('/uploads/evento', express.static(path.resolve('evento')));
+app.use('/uploads/ticket', express.static(path.resolve('ticket')));
 
 export default app;
