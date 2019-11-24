@@ -4,10 +4,12 @@ const router = Router();
 import uploadEvento from '../libs/multer-evento'
 import { getEventos, createEvento, deleteEvento, getEvento, updateEvento } from '../controllers/evento.controller'
 
+
 // middleware
 // router.use(upload.single('image'));
 
 // routes
+//para crud de evento
 //para realizar la pruebas en las photos
 router.route('/eventos')
     //importacion de la photo 

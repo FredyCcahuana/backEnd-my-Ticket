@@ -1,3 +1,7 @@
+//para la ecriptacion
+import dotenv from 'dotenv';
+//lee las varibles de entorno
+dotenv.config();
 import app from './app';
 import { startConnection } from './database'
 
