@@ -30,7 +30,7 @@ app.use('/api', indexRoutes);
 //esta carpeta para realizar el guardado de las imagenes
 //cuando entre a la direccion de /uploads se accede a las imagens
 //path.resolve parte de la direccion anterior
-app.use('/uploads/evento', express.static(path.resolve('evento')));
-app.use('/uploads/ticket', express.static(path.resolve('ticket')));
+app.use('/uploads/evento', express.static(path.resolve('uploads/evento')));
+app.use('/uploads/ticket', express.static(path.resolve('uploads/ticket')));
 
 export default app;

@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 
 //para encontrar la carpeta donde esta la photo
 import fs from 'fs-extra';
-import path from 'path'
+import path from 'path';
 
 // Models
 import Evento, { IEvento } from '../models/Evento';
@@ -22,9 +22,11 @@ export async function createEvento(req: Request, res: Response): Promise<Respons
     const evento = new Evento(newEvento);
     await evento.save();
     return res.json({
-        message: 'Photo Saved Successfully',
+        message: 'Evento Saved Successfully',
         evento
+        
     });
+    
 };
 //obtiene la photo de una solo photo
 export async function getEvento(req: Request, res: Response): Promise<Response> {
@@ -52,7 +54,7 @@ export async function updateEvento(req: Request, res: Response): Promise<Respons
         categoria,
         fechaInicio,
         fechaFinal
-    });
+    },{new:true});
     return res.json({
         message: 'Successfully updated',
         updatedPhoto

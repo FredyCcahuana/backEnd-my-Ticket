@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     destination: 'uploads/evento',
     filename: (req, file, cb) => {
         //renobrar el nombre de las imagenes
-        //uuid: genera un id
+        //uuid: genera un id del archivo que recibe
         //path.extname(file.originalname) conservar la extension
         cb(null, uuid() + path.extname(file.originalname))
     }
