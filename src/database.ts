@@ -10,5 +10,5 @@ export async function startConnection() {
         useCreateIndex:true
     }).then(db => console.log('Database is connectedxd'))
     .catch(err => console.log(err));;
-    
+    //npm run build && node dist/index.js
 }
